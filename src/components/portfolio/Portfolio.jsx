@@ -17,7 +17,7 @@ const Portfolio = () => {
         'Portfolio website using react',
       technologies: 'React | CSS ',
       link: '#home',
-      github: '',
+      github: 'https://github.com/Joussef-C/portfolio-react',
     },
     {
       id: 2,
