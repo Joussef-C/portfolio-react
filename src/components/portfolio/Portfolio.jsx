@@ -1,16 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import IMG1 from '../../assets/portfolio.png';
 import IMG2 from '../../assets/todo.png';
 import IMG3 from '../../assets/api-react.png';
 import IMG4 from '../../assets/sushi-website.png';
+import IMG5_1 from '../../assets/Rental estate (1).png';
+import IMG5_2 from '../../assets/Rental estate (2).png';
+import IMG5_3 from '../../assets/Rental estate (3).png';
+import IMG5_4 from '../../assets/Rental estate (4).png';
+import IMG5_5 from '../../assets/Rental estate (5).png';
 
 import './portfolio.css';
 import { FaGithub } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+
+const ImageCarousel = ({ images, title }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="portfolio__item-image-carousel">
+      <img src={images[currentIndex]} alt={`${title} - ${currentIndex + 1}`} />
+      {images.length > 1 && (
+        <>
+          <button className="carousel-btn carousel-btn-prev" onClick={goToPrevious}>
+            <IoIosArrowBack />
+          </button>
+          <button className="carousel-btn carousel-btn-next" onClick={goToNext}>
+            <IoIosArrowForward />
+          </button>
+          <div className="carousel-indicators">
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => setCurrentIndex(index)}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 const Portfolio = () => {
   const soloProjects = [
     {
-      id: 1,
+      id: 5,
       title: 'Portfolio',
       img: IMG1,
       description:
@@ -48,6 +95,17 @@ const Portfolio = () => {
       link: 'https://sushi-website-five.vercel.app/',
       github: 'https://github.com/Joussef-C/sushi-website',
     },
+    {
+      id: 1,
+      title: 'Real Estate Rental Platform',
+      img: IMG5_1,
+      images: [IMG5_1, IMG5_2, IMG5_3, IMG5_4, IMG5_5],
+      description:
+        'Full-stack real estate website for renting properties with an admin control panel for managing property listings. Features include property browsing, advanced search, and complete CRUD operations for administrators.',
+      technologies: 'React | TypeScript | Tailwind CSS | MongoDB | Amazon S3',
+      link: 'https://webdev-production-5c45.up.railway.app/',
+      github: '#',
+    },
 
 
   ];
@@ -61,7 +119,11 @@ const Portfolio = () => {
         {soloProjects.map((pro) => (
           <article className="portfolio__item" key={pro.id}>
             <div className="portfolio__item-image">
-              <img src={pro.img} alt={pro.title} />
+              {pro.images ? (
+                <ImageCarousel images={pro.images} title={pro.title} />
+              ) : (
+                <img src={pro.img} alt={pro.title} />
+              )}
             </div>
             <div className="portfolio__item-content">
               <h3>{pro.title}</h3>
@@ -75,7 +137,7 @@ const Portfolio = () => {
                 className="btn"
                 rel="noreferrer"
               >
-                GitHub <FaGithub/>
+                GitHub <FaGithub />
               </a>
               <a
                 href={pro.link}
