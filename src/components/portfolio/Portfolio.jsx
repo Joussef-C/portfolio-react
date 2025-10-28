@@ -8,6 +8,7 @@ import IMG5_2 from '../../assets/Rental estate (2).png';
 import IMG5_3 from '../../assets/Rental estate (3).png';
 import IMG5_4 from '../../assets/Rental estate (4).png';
 import IMG5_5 from '../../assets/Rental estate (5).png';
+import IMG6 from '../../assets/instapay.png';
 
 import './portfolio.css';
 import { FaGithub } from 'react-icons/fa';
@@ -57,45 +58,6 @@ const ImageCarousel = ({ images, title }) => {
 const Portfolio = () => {
   const soloProjects = [
     {
-      id: 5,
-      title: 'Portfolio',
-      img: IMG1,
-      description:
-        'Portfolio website using react',
-      technologies: 'React | CSS ',
-      link: '#home',
-      github: 'https://github.com/Joussef-C/portfolio-react',
-    },
-    {
-      id: 2,
-      title: 'To-Do-App',
-      img: IMG2,
-      description:
-        'Todo app using react ',
-      technologies: 'React | CSS',
-      link: 'https://todo-react-theta-ashen.vercel.app/',
-      github: 'https://github.com/Joussef-C/todo-react',
-    },
-    {
-      id: 3,
-      title: 'Cryptocurrency Prices API',
-      img: IMG3,
-      description: 'List of top 100 Cryptocurrency Prices using CoinGecko API',
-      technologies: 'React | Axion',
-      link: 'https://api-react-swart.vercel.app/',
-      github: 'https://github.com/Joussef-C/api-react',
-    },
-    {
-      id: 4,
-      title: 'Sushi Restaurant',
-      img: IMG4,
-      description:
-        'Responsive restaurant website',
-      technologies: 'HTML | CSS | JavaScript',
-      link: 'https://sushi-website-five.vercel.app/',
-      github: 'https://github.com/Joussef-C/sushi-website',
-    },
-    {
       id: 1,
       title: 'Real Estate Rental Platform',
       img: IMG5_1,
@@ -105,6 +67,55 @@ const Portfolio = () => {
       technologies: 'React | TypeScript | Tailwind CSS | MongoDB | Amazon S3',
       link: 'https://webdev-production-5c45.up.railway.app/',
       github: '#',
+    },
+    {
+      id: 2,
+      title: 'Instapay',
+      img: IMG6,
+      description:
+        'Modern payment processing application with intuitive user interface and secure transaction handling',
+      technologies: 'HTML | CSS | JavaScript',
+      link: 'https://joussef-c.github.io/Instapay/',
+      github: 'https://github.com/Joussef-C/Instapay',
+    },
+    {
+      id: 3,
+      title: 'To-Do-App',
+      img: IMG2,
+      description:
+        'Todo app using react ',
+      technologies: 'React | CSS',
+      link: 'https://todo-react-theta-ashen.vercel.app/',
+      github: 'https://github.com/Joussef-C/todo-react',
+    },
+    {
+      id: 4,
+      title: 'Cryptocurrency Prices API',
+      img: IMG3,
+      description: 'List of top 100 Cryptocurrency Prices using CoinGecko API',
+      technologies: 'React | Axion',
+      link: 'https://api-react-swart.vercel.app/',
+      github: 'https://github.com/Joussef-C/api-react',
+    },
+    {
+      id: 5,
+      title: 'Sushi Restaurant',
+      img: IMG4,
+      description:
+        'Responsive restaurant website',
+      technologies: 'HTML | CSS | JavaScript',
+      link: 'https://sushi-website-five.vercel.app/',
+      github: 'https://github.com/Joussef-C/sushi-website',
+    },
+    {
+      id: 6,
+      title: 'Portfolio',
+      img: IMG1,
+      description:
+        'Portfolio website using react',
+      technologies: 'React | CSS ',
+      link: '#home',
+      github: 'https://github.com/Joussef-C/portfolio-react',
     },
 
 
