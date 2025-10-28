@@ -3,8 +3,8 @@ import { FaDownload } from 'react-icons/fa';
 const CTA = () => {
   return (
     <div className="cta">
-      <a href="https://drive.google.com/file/d/19V9kWZ-3K1o4khKvMP526Moh2fRERskP/view" target="_blank" rel="noreferrer" className="btn">
-        Download CV <FaDownload/>
+      <a href="https://drive.google.com/file/d/1lYAXkiCXi69iUdbEyMRz-3KTbyJer_DI/view" target="_blank" rel="noreferrer" className="btn">
+        Download CV <FaDownload />
       </a>
     </div>
   );
